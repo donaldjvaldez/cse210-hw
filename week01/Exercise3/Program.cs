@@ -13,7 +13,7 @@ class Program
             int guess = -1;
             do
             {
-                Console.Write("What is your guess? (between 1-100) ");
+                Console.Write("What is the magic number? (between 1-100) ");
                 guess = int.Parse(Console.ReadLine());
 
                 if (magicNumber > guess)
