@@ -1,3 +1,5 @@
+// Improvements: I decided to set a list of prompts divided by category and give the user the option to 
+// chose what they want to talk about in their journal.
 using System;
 
 class Program
@@ -16,19 +18,25 @@ class Program
     Console.Write("What would you like to do? ");
     choice = Console.ReadLine();
 
-        if (choice == "1")
-        {
-            string prompt = generator.GetRandomPrompt();
-            Console.WriteLine(prompt);
-            Console.Write("Your response: ");
-            string response = Console.ReadLine();
+        if (choice == "1") {
+        generator.ShowCategories();
+        Console.Write("Enter category: ");
+        string category = Console.ReadLine();
 
-            Entry entry = new Entry();
-            entry._date = DateTime.Now.ToShortDateString();
-            entry._promptText = prompt;
-            entry._entryText = response;
-            journal.AddEntry(entry);
+        string prompt = generator.GetRandomPrompt(category);
+        Console.WriteLine(prompt);
+
+        Console.Write("Your response: ");
+        string response = Console.ReadLine();
+
+        Entry entry = new Entry();
+        entry._date = DateTime.Now.ToShortDateString();
+        entry._promptText = prompt;
+        entry._entryText = response;
+
+        journal.AddEntry(entry);
         }
+
         else if (choice == "2") 
         {
             journal.DisplayAll();
