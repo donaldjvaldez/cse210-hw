@@ -1,0 +1,5 @@
+1850
+SimpleGoal:   Talk to someone new,   Talk to someone that I dont use to talk, 100, True
+EternalGoal:   Pray,   Pray every single night before going to bed, 50
+SimpleGoal:  Play with my kids,  Go to the park or play at home with my children, 150, True
+DisciplineGoal: Going to the gym, Go to the gym every single day, 300, 1, 30, 600, False
